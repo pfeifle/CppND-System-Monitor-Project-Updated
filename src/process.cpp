@@ -10,11 +10,27 @@ using std::string;
 using std::to_string;
 using std::vector;
 
+Process::Process(int pid) {
+    pid_ = pid;
+}
+
+bool Process::operator>(const Process& a) const {
+
+    return (CpuUtilization() > a.CpuUtilization()) ? true :false; 
+
+}
+
+bool Process::operator<(const Process& a) const {
+
+    return (CpuUtilization() < a.CpuUtilization()) ? true :false; 
+
+}
+
 // TODO: Return this process's ID
 int Process::Pid() { return 0; }
 
 // TODO: Return this process's CPU utilization
-float Process::CpuUtilization() { return 0; }
+float Process::CpuUtilization() const{ return 0; }
 
 // TODO: Return the command that generated this process
 string Process::Command() { return string(); }
@@ -29,5 +45,3 @@ string Process::User() { return string(); }
 long int Process::UpTime() { return 0; }
 
 // TODO: Overload the "less than" comparison operator for Process objects
-// REMOVE: [[maybe_unused]] once you define the function
-bool Process::operator<(Process const& a[[maybe_unused]]) const { return true; }
