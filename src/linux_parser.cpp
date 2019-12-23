@@ -303,7 +303,7 @@ string LinuxParser::User(int pid) {
           return line.substr(0,pos-1); 
     }
   }
-  return ""; // should never happen  
+  return "root"; // should never happen  
 }
 
 
