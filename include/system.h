@@ -24,7 +24,6 @@ class System {
  private:
   Processor cpu_ = {};
   std::vector<Process> processes_ = {};
-  //std::string od_ {}, kernel_{};
 };
 
 #endif

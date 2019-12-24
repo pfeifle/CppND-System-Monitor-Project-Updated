@@ -16,8 +16,6 @@ using std::vector;
 System::System(){
   cpu_ = Processor();
   Processes();
- // os_ = LinuxParser::OperatingSystem();
- // kernel_ = LinuxParser::Kernel();
 }
 
 // TODO: Return the system's CPU

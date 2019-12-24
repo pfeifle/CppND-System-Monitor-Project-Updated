@@ -11,10 +11,7 @@ using std::string;
 using std::to_string;
 using std::vector;
 
-
-//forward declaration helper funcion
-//string trim (const string & str);
-
+ 
 // DONE: An example of how to read data from the filesystem
 string LinuxParser::OperatingSystem() {
   string line;
@@ -93,12 +90,6 @@ float LinuxParser::MemoryUtilization() {
         break;
     }
   }
-/* seems correct
-  std::cout << "Total="<<value_tmem <<" ";
-  std::cout << "Free="<<value_fmem <<" ";
-  std::cout << "Ratio="<< (100*(std::stol(value_tmem) - std::stol(value_fmem)) / 
-          std::stol(value_tmem)) <<" ";
-*/
   return ( (std::stof(value_tmem) - std::stof(value_fmem)) / 
           std::stof(value_tmem));
 
@@ -303,7 +294,7 @@ string LinuxParser::User(int pid) {
           return line.substr(0,pos-1); 
     }
   }
-  return "root"; // should never happen  
+  return "root"; // default value  
 }
 
 

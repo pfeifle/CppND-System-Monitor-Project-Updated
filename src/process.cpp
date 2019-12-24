@@ -29,17 +29,6 @@ int Process::Pid() { return pid_; }
 // TODO: Return this process's CPU utilization
 float Process::CpuUtilization() const{ 
     return cpu_;
-  //long lOldActiveJiffiesProcess =LinuxParser::ActiveJiffies(pid_);
-  //long lOldJiffies = LinuxParser::ActiveJiffies();
-  //sleep (1); 
-  float lActiveJiffiesProcess =LinuxParser::ActiveJiffies(pid_);
-  float upTime = LinuxParser::UpTime(pid_);
-
-  //long lJiffies = LinuxParser::ActiveJiffies();
-  return 100*(lActiveJiffiesProcess/upTime);  
-  
-  //return    (((lActiveJiffiesProcess-lOldActiveJiffiesProcess)- (lJiffies-lOldJiffies))/ 
-  //           (lJiffies-lOldJiffies));
 }
  
 // TODO: Return the command that generated this process
