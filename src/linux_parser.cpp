@@ -255,8 +255,11 @@ string LinuxParser::Ram(int pid) {
     while (std::getline(filestream, line)) {
       std::istringstream linestream(line);
       linestream >> key >> value;
-      if (key == "VmData:") 
-          return value; 
+      if (key == "VmData:"){ 
+          int tmp= (100 * std::stof(value)/1024+0.5); 
+          return to_string(tmp/100)+"."+((tmp%100 <10) ? "0"+to_string(tmp%100):to_string(tmp%100));
+      }
+          
     }
   }
   return ""; // should never happen  
